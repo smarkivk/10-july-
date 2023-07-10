@@ -1,0 +1,49 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Create a HashMap to store student names and their corresponding scores
+        Map<String, Integer> scores = new HashMap<>();
+
+        // Add student scores to the HashMap
+        scores.put("Alice", 90);
+        scores.put("Bob", 85);
+        scores.put("Charlie", 95);
+
+        // Access and print individual scores
+        System.out.println("Score of Alice: " + scores.get("Alice"));
+        System.out.println("Score of Bob: " + scores.get("Bob"));
+        System.out.println("Score of Charlie: " + scores.get("Charlie"));
+
+        // Check if a student is present in the HashMap
+        String student = "David";
+        if (scores.containsKey(student)) {
+            System.out.println("Score of " + student + ": " + scores.get(student));
+        } else {
+            System.out.println(student + " is not found in the HashMap.");
+        }
+
+        // Update a student's score
+        String updatedStudent = "Bob";
+        int newScore = 88;
+        scores.put(updatedStudent, newScore);
+        System.out.println("Updated score of " + updatedStudent + ": " + scores.get(updatedStudent));
+
+        // Remove a student from the HashMap
+        String removedStudent = "Charlie";
+        scores.remove(removedStudent);
+        System.out.println(removedStudent + " is removed from the HashMap.");
+
+        // Print the size of the HashMap
+        System.out.println("Size of the HashMap: " + scores.size());
+
+        // Iterate over the entries in the HashMap
+        System.out.println("Student scores:");
+        for (Map.Entry<String, Integer> entry : scores.entrySet()) {
+            String studentName = entry.getKey();
+            int score = entry.getValue();
+            System.out.println(studentName + ": " + score);
+        }
+    }
+}
